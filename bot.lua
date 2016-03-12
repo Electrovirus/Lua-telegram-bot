@@ -5,48 +5,50 @@ URL = require('socket.url')
 JSON = require('dkjson')
 HTTPS = require('ssl.https')
 ----config----
-local bot_api_key = ""
+local bot_api_key = " "--توکن بوت را درون " قرار دهید --
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
-local start = [[HI
-`/bold text`
-return *bold* text
+local start = [[
+hi :)
 
-`/italic text`
-return _italic_ text
+/hyper [`test`]
+- `test`
 
-`/link url text`
-markdown link
+/hyper [*test*]
+- *test*
 
-`/code text`
-return `code` text
+/hyper [_test_]
+- _test_
 
+/hyper [[text](url)](url)
+- [BeatBot](BeatBot.ir)
 
-*-channel*
-*add bot to a channel then use this commands*
+*EXAMPLE*
 
-`/boldch @channelusername text`
-send *bold* text to a channel
+/hyper [`Hi`]
+[*I'm a api bot* ]
+[_BeatBot Team created me_]
+[[BeatBot Channel](test)][(http://telegram.me/beatbot_team)]
 
-`/italicch @channelusername text`
-send _italic_ text to a channel
+*RESULT*
 
-`/linkch @channelusername url text`
-send markdown link to a channel
+`Hi`
+*I'm a api bot* 
+_BeatBot Team created me_
+[BeatBot Channel](http://telegram.me/beatbot_team)
 
-`/codech @channelusername text`
-send `code` text to a channel
+*OTHER*
 
-
-*-other*
-
-*sticker to photo* 
-_just send a sticker_
+*sticker to photo*
+`just send a sticker`
 
 *photo to sticker*
-_just send a photo_
+`just send a photo`
 
-[Source](https://github.com/pAyDaAr/lua-api-bot) ;-)
+*webshot*
+`/webshot url`
+
+_TNX TO USE ME :)_
 ]] 
 
 -------
@@ -55,7 +57,7 @@ _just send a photo_
 
 function is_admin(msg)-- Check if user is admin or not
   local var = false
-  local admins = {}-- put your id here
+  local admins = {94746365}-- put your id here
   for k,v in pairs(admins) do
     if msg.from.id == v then
       var = true
@@ -103,7 +105,7 @@ sendSticker = function(chat_id, sticker, reply_to_message_id)
 	local url = BASE_URL .. '/sendSticker'
 
 	local curl_command = 'curl -s "' .. url .. '" -F "chat_id=' .. chat_id .. '" -F "sticker=@' .. sticker .. '"'
-
+-- 
 	if reply_to_message_id then
 		curl_command = curl_command .. ' -F "reply_to_message_id=' .. reply_to_message_id .. '"'
 	end
@@ -205,7 +207,7 @@ function bot_run()
 
 	bot = bot.result
 
-	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nbased on linux-file-manager :D\nthx to @imandaneshi\neditor: @unfriendly"
+	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nBeatBot hyper bot :)\nthx to @imandaneshi\neditor: @amirho3inf \nchannel : @BeatBot_Team"
 
 	print(bot_info)
 
@@ -233,6 +235,8 @@ function msg_processor(msg)
 	file = download_to_file("https://api.telegram.org/file/bot"..bot_api_key.."/"..jres.result.file_path, filename)
 	sendPhoto(msg.chat.id, file)
 
+  
+
   elseif msg.photo then
 	local matches = { (msg.photo) }
 	file = msg.photo[3].file_id
@@ -242,56 +246,24 @@ function msg_processor(msg)
 	filename = "photo.jpg"
 	file = download_to_file("https://api.telegram.org/file/bot"..bot_api_key.."/"..jres.result.file_path, filename)
 	sendSticker(msg.chat.id, file)
-
+	
+	elseif msg.text:match("/[Ww]ebshot (.*)") then
+  local url = matches[1]
+  filename = "webshot.jpg"
+  file = download_to_file("http://api.screenshotmachine.com/?key=b645b8&size=FULL&url="..url, filename)
+  sendphoto(msg.chat.id, file,url)
+  
   if msg.text then return end
-
-  elseif msg.text:match("^/bold (.*)") then
-	local matches = { string.match(msg.text, "^/bold (.*)") }
-	local text = '*'..matches[1]..'*'
-  sendMessage(msg.chat.id, text, true, false, true)
-
-  elseif msg.text:match("^/boldch (.*) (.*)") then
-	local matches = { string.match(msg.text, "^/boldch (.*) (.*)") }
-	local text = '*'..matches[2]..'*'
-	local channel = matches[1]
-	sendMessage(channel, text, true, false, true)
-
-  elseif msg.text:match("^/italic (.*)") then
-	local matches = { string.match(msg.text, "^/italic (.*)") }
-	local text = '_'..matches[1]..'_'
-	sendMessage(msg.chat.id, text, true, false, true)
-
- elseif msg.text:match("^/italicch (.*) (.*)") then
-	local matches = { string.match(msg.text, "^/italicch (.*) (.*)") }
-	local text = '_'..matches[2]..'_'
-	local channel = matches[1]
-	sendMessage(channel, text, true, false, true)
-
- elseif msg.text:match("^/link (.*) (.*)") then
- local matches = { string.match(msg.text, "^/link (.*) (.*)") }
- local text = '['..matches[2]..']('..matches[1]..')'
+  
+ 
+ elseif msg.text:match("/hyper (.*)") then
+ local matches = { string.match(msg.text, "/hyper (.*)") }
+ local text = ''..matches[1]..''
  sendMessage(msg.chat.id, text, true, false, true)
-
-elseif msg.text:match("^/linkch (.*) (.*) (.*)") then
- local matches = { string.match(msg.text, "^/linkch (.*) (.*) (.*)") }
- local text = '['..matches[3]..']('..matches[2]..')'
- local channel = matches[1]
- sendMessage(channel, text, true, false, true)
-
- elseif msg.text:match("^/code (.*)") then
- local matches = { string.match(msg.text, "^/code (.*)") }
- local text = '`'..matches[1]..'`'
- sendMessage(msg.chat.id, text, true, false, true)
-
- elseif msg.text:match("^/codech (.*) (.*)") then
- local matches = { string.match(msg.text, "^/codech (.*) (.*)") }
- local text = '`'..matches[2]..'`'
- local channel = matches[1]
- sendMessage(channel, text, true, false, true)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-
+  sendMessage(msg.chat.id, [[[ربات خودتونو بسازید :)](http://telegram.me/beatbot_team)]], true, false, true)
 return end
 
 end
