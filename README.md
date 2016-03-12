@@ -50,5 +50,6 @@ Save bot.lua
 
 ```
 bash launch.sh install && bash launch.sh
+``` 
 
 for Start the bot
