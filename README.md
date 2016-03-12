@@ -2,24 +2,6 @@
 
 A simple telegram-bot wtitten in LUA based on [file manager bot](https://github.com/Imandaneshi/file-manager-bot)
 
-# commands
-
-**/hyper (* for bold)(` for code)(_ for italic)
-
-
-**/hyper [text] (url)**
-
-
-**sticker to photo**
-
-
-**photo to sticker**
-
-
-**/webshot url**
-
-# Installation
-
 You should have [lua](http://www.lua.org/) installed
 
 ```bash
@@ -41,6 +23,8 @@ Then install bot using
 `lua bot.lua`
 
 bot token in bot.lua (config part)
+
+
 
 ```lua
 
