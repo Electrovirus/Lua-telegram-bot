@@ -1,50 +1,29 @@
-# lua-api-bot
+# Api-Telegram-bot by lua
 
 A simple telegram-bot wtitten in LUA based on [file manager bot](https://github.com/Imandaneshi/file-manager-bot)
 
 # commands
 
- **sticker to photo**
+/hyper [`test`]
+- `test`
 
+/hyper [*test*]
+- *test*
+
+/hyper [_test_]
+- _test_
+
+/hyper [[text](url)](url)
+- [BeatBot](BeatBot.ir)
+
+*sticker to photo*
 `just send a sticker`
 
- **photo to sticker**
-
+*photo to sticker*
 `just send a photo`
 
-  **bold text**
-
-`/bold text`
-
- **italic text**
-
-`/italic text`
-
- **markdown link**
-
-`/link url text`
-
-**code text**
-
-`/code text`
-
-# channel
-
- **send bold text to a channel**
-
-`/boldch @channelusername text`
-
- **send italic text to a channel**
-
-`/italicch @channelusername text`
-
- **send markdown link to a channel**
-
-`/linkch @channelusername url text`
-
-**send code text to a channel**
-
-`/codech @channelusername text`
+*webshot*
+`/webshot url`
 
 # Installation
 
@@ -59,8 +38,8 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 Clone the bot
 
 ```
-git clone https://github.com/pAyDaAr/lua-api-bot.git
-cd lua-api-bot
+git clone https://github.com/BeatBotTeam/Api-Telegram-Bot.git
+cd Api-Telegram-Bot
 
 ```
 
@@ -77,16 +56,14 @@ local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = "" -- do not set this
 ```
 
-And enter your telegram-id in admins table in [bot.lua](https://github.com/Imandaneshi/file-manager-bot/blob/master/bot.lua#L19)
+And enter your telegram-id in admins table in [bot.lua](https://github.com/beatbotteam/api-telegram-bot/blob/master/bot.lua#L19)
 ```lua
 local var = false
-  local admins = {123456789,987654321}-- put your id here
+  local admins = {94746365}-- put your id here
   for k,v in pairs(admins) do
 
 ```
 
 Save bot.lua
 
-Start the bot
-
-`lua bot.lua`
+**bash launch.sh install && bash launch.sh** for Start the bot
