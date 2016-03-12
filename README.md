@@ -4,26 +4,19 @@ A simple telegram-bot wtitten in LUA based on [file manager bot](https://github.
 
 # commands
 
-/hyper [`test`]
-- `test`
+**/hyper `test`**
 
-/hyper [*test*]
-- *test*
+**/hyper *test* **
 
-/hyper [_test_]
-- _test_
+**/hyper _test_**
 
-/hyper [[text](url)](url)
-- [BeatBot](BeatBot.ir)
+**/hyper [text](url)**
 
-*sticker to photo*
-`just send a sticker`
+**sticker to photo**
 
-*photo to sticker*
-`just send a photo`
+**photo to sticker**
 
-*webshot*
-`/webshot url`
+**/webshot url**
 
 # Installation
 
