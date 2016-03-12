@@ -6,11 +6,15 @@ A simple telegram-bot wtitten in LUA based on [file manager bot](https://github.
 
 **/hyper (* for bold)(` for code)(_ for italic)
 
-**/hyper [text](url)**
+
+**/hyper [text] (url)**
+
 
 **sticker to photo**
 
+
 **photo to sticker**
+
 
 **/webshot url**
 
