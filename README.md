@@ -4,11 +4,7 @@ A simple telegram-bot wtitten in LUA based on [file manager bot](https://github.
 
 # commands
 
-**/hyper `test`**
-
-**/hyper *test* **
-
-**/hyper _test_**
+**/hyper (* for bold)(` for code)(_ for italic)
 
 **/hyper [text](url)**
 
