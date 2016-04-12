@@ -45,9 +45,6 @@ _BeatBot Team created me_
 *photo to sticker*
 `just send a photo`
 
-*webshot*
-`/webshot url`
-
 _TNX TO USE ME :)_
 ]] 
 
@@ -246,12 +243,6 @@ function msg_processor(msg)
 	filename = "photo.jpg"
 	file = download_to_file("https://api.telegram.org/file/bot"..bot_api_key.."/"..jres.result.file_path, filename)
 	sendSticker(msg.chat.id, file)
-	
-	elseif msg.text:match("/[Ww]ebshot (.*)") then
-  local url = matches[1]
-  filename = "webshot.jpg"
-  file = download_to_file("http://api.screenshotmachine.com/?key=b645b8&size=FULL&url="..url, filename)
-  sendphoto(msg.chat.id, file,url)
   
   if msg.text then return end
   
