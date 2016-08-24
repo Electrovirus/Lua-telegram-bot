@@ -215,7 +215,7 @@ function msg_processor(msg)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, Patrick the star bot V.1, true, false, true)
-  sendMessage(msg.chat.id, Bot started :) Send a sticker or photo, true, false, true)
+  sendMessage(msg.chat.id, Bot started ⭐ Send a sticker or photo, true, false, true)
 return end
 
 end
