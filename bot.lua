@@ -259,7 +259,8 @@ function msg_processor(msg)
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
   sendMessage(msg.chat.id, START, true, false, true)
-return end
+return START
+end
 
 end
 bot_run() -- Run main function
