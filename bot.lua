@@ -5,11 +5,14 @@ URL = require('socket.url')
 JSON = require('dkjson')
 HTTPS = require('ssl.https')
 ----config----
-local bot_api_key = " "--token here
+local bot_api_key = "252743722:AAFZ4tpb7MJt1VjoUpkFuzvBj9CRtkbL0hU"--token here
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
 local start = [[
 hi :)
+I am patrick the sea star✩
+These are what i can do
+
 
 /hyper [`test`]
 - `test`
@@ -21,7 +24,7 @@ hi :)
 - _test_
 
 /hyper [[text](url)](url)
-- [BeatBot](BeatBot.ir)
+- [Google](google.com)
 
 *EXAMPLE*
 
@@ -46,6 +49,7 @@ _Powered by Electrovirus_
 `just send a photo`
 
 _Have fun :)_
+🌠Patrick the sea star V.1🌠
 ]] 
 
 -------
@@ -271,4 +275,4 @@ while is_running do -- Start a loop witch receive messages.
 	end
 
 end
-print("Bot halted")
+print("Bot started")
