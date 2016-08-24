@@ -8,49 +8,6 @@ HTTPS = require('ssl.https')
 local bot_api_key = "252743722:AAFZ4tpb7MJt1VjoUpkFuzvBj9CRtkbL0hU"--please dont hackme with token asshole :)
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
-local START = [[
-hi :)
-I am patrick the sea star✩
-These are what i can do
-
-
-/hyper [`test`]
-- `test`
-
-/hyper [*test*]
-- *test*
-
-/hyper [_test_]
-- _test_
-
-/hyper [[text](url)](url)
-- [Google](google.com)
-
-*EXAMPLE*
-
-/hyper [`Hi`]
-[*I'm a api bot* ]
-[_Powered by Electrovirus_]
-[[EV Channel](test)][(http://telegram.me/EV_official)]
-
-*RESULT*
-
-`Hi`
-*I'm a api bot* 
-_Powered by Electrovirus_
-[EV channel](http://telegram.me/EV_official)
-
-*OTHER*
-
-*sticker to photo*
-`just send a sticker`
-
-*photo to sticker*
-`just send a photo`
-
-_Have fun :)_
-🌠Patrick the sea star V.1🌠
-]] 
 
 -------
 
@@ -258,9 +215,8 @@ function msg_processor(msg)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-  sendMessage(msg.chat.id, START, true, false, true)
-return START
-end
+  sendMessage(msg.chat.id, hi :) \nI am patrick the sea star✩ \nThese are what i can do \n\n\n*Send a sticker i will convert it to photo* \n*Send a photo i will convert it to sticker* \n\nPatrick bot V.1, true, false, true)
+return end
 
 end
 bot_run() -- Run main function
