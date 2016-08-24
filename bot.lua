@@ -8,7 +8,7 @@ HTTPS = require('ssl.https')
 local bot_api_key = "252743722:AAFZ4tpb7MJt1VjoUpkFuzvBj9CRtkbL0hU"--please dont hackme with token asshole :)
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
-local start = [[
+local START = [[
 hi :)
 I am patrick the sea star✩
 These are what i can do
@@ -208,7 +208,7 @@ function bot_run()
 
 	bot = bot.result
 
-	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nBeatBot hyper bot :)\ntnx to @imandaneshi & @Unfriendly\neditor: @amirho3inf \nchannel : @BeatBot_Team"
+	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.."
 
 	print(bot_info)
 
@@ -258,34 +258,7 @@ function msg_processor(msg)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-  sendMessage(msg.chat.id, hi :)
-I am patrick the sea star✩
-These are what i can do
-/hyper [`test`]
-- `test`
-/hyper [*test*]
-- *test*
-/hyper [_test_]
-- _test_
-/hyper [[text](url)](url)
-- [Google](google.com)
-*EXAMPLE*
-/hyper [`Hi`]
-[*I'm a api bot* ]
-[_Powered by Electrovirus_]
-[[EV Channel](test)][(http://telegram.me/EV_official)]
-*RESULT*
-`Hi`
-*I'm a api bot* 
-_Powered by Electrovirus_
-[EV channel](http://telegram.me/EV_official)
-*OTHER*
-*sticker to photo*
-`just send a sticker`
-*photo to sticker*
-`just send a photo`
-_Have fun :)_
-🌠Patrick the sea star V.1🌠, true, false, true)
+  sendMessage(msg.chat.id, START, true, false, true)
 return end
 
 end
