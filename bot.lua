@@ -258,7 +258,34 @@ function msg_processor(msg)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-  sendMessage(msg.chat.id, start, true, false, true)
+  sendMessage(msg.chat.id, hi :)
+I am patrick the sea star✩
+These are what i can do
+/hyper [`test`]
+- `test`
+/hyper [*test*]
+- *test*
+/hyper [_test_]
+- _test_
+/hyper [[text](url)](url)
+- [Google](google.com)
+*EXAMPLE*
+/hyper [`Hi`]
+[*I'm a api bot* ]
+[_Powered by Electrovirus_]
+[[EV Channel](test)][(http://telegram.me/EV_official)]
+*RESULT*
+`Hi`
+*I'm a api bot* 
+_Powered by Electrovirus_
+[EV channel](http://telegram.me/EV_official)
+*OTHER*
+*sticker to photo*
+`just send a sticker`
+*photo to sticker*
+`just send a photo`
+_Have fun :)_
+🌠Patrick the sea star V.1🌠, true, false, true)
 return end
 
 end
