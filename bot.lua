@@ -213,10 +213,6 @@ function msg_processor(msg)
  local text = ''..matches[1]..''
  sendMessage(msg.chat.id, text, true, false, true)
 
-elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
- sendMessage(msg.chat.id, Patrick the star bot V.1, true, false, true)
-  sendMessage(msg.chat.id, Bot started ⭐ Send a sticker or photo, true, false, true)
-return end
 
 end
 bot_run() -- Run main function
